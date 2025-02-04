@@ -1,0 +1,26 @@
+﻿@page "{id?}"
+@model PortfolioDetailsModel
+@{
+    ViewData["Title"] = Model.Portfolio?.Title ?? "Portfolio Details";
+}
+
+<section id="portfolio-details" class="portfolio-details section">
+    <div class="container" data-aos="fade-up">
+        <div class="portfolio-details-slider swiper init-swiper">
+            <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide">
+                    <img src="@Model.Portfolio?.ImageUrl" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+            <div class="col-lg-8">
+                <div class="portfolio-description">
+                    <h2>@Model.Portfolio?.Title</h2>
+                    <p>@Model.Portfolio?.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

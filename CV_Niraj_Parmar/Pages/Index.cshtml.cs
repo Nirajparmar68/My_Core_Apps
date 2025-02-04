@@ -4,21 +4,13 @@ namespace CV_Niraj_Parmar.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
         // Example Date of Birth
         public DateTime DateOfBirth { get; set; } = new DateTime(1994, 01, 07);
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
 
         public void OnGet()
         {
 
         }
-
 
         public int CalculateAge(DateTime dob)
         {

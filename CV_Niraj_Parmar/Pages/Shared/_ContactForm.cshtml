@@ -1,0 +1,123 @@
+﻿@model _ContactForm
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    @if (Model == null)
+    {
+        <p style="color: red;">Model is NULL!</p>
+    }
+
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
+        @if (!string.IsNullOrWhiteSpace(Model!.StatusMessage))
+        {
+            <div class="alert alert-info mt-2">@Model.StatusMessage</div>
+        }
+
+        <div class="row mt-1">
+
+            <div class="col-lg-4">
+                <div class="info">
+                    <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Location:</h4>
+                        <p>G-15, Shital Tenement, KK Nagar, Ghatlodiya, Ahmedabad, Gujarat - 380061</p>
+                    </div>
+
+                    <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>neocorporation68@gmail.com</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>+91 917 364 8973</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+                <form method="post" id="contactForm" action="#" role="form" class="php-email-form">
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" asp-for="ContactForm.Name" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                            <span asp-validation-for="ContactForm.Name" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" asp-for="ContactForm.Email" class="form-control" name="email" id="email" value="" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" asp-for="ContactForm.Subject" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" asp-for="ContactForm.Message" name="message" id="" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#contactForm").on('submit', function (evt) {
+                evt.preventDefault(); // Prevent default form submission
+                debugger
+                $.ajax({
+                    url: '/api/contactformcontroller', // Controller action URL
+                    type: 'POST',
+                    data: $(this).serialize(), // Serialize form data
+                    success: function (response) {
+                        if (response.success) {
+                            $(".sent-message").show();
+                            $(".error-message").hide();
+                            $("#contactForm")[0].reset(); // Reset the form
+                        } else {
+                            $(".error-message").text(response.errorMessage).show();
+                            $(".sent-message").hide();
+                        }
+                    },
+                    error: function () {
+                        $(".error-message").text("There was an error sending your message. Please try again.").show();
+                        $(".sent-message").hide();
+                    }
+                });
+            });
+        });
+    </script>
+}

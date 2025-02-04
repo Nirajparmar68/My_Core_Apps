@@ -1,14 +1,10 @@
 ﻿@page
+@using CV_Niraj_Parmar.Models
+@using CV_Niraj_Parmar.Pages.Shared
 @model IndexModel
 @{
     ViewData["Title"] = "Home";
 }
-
-
-@*<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>*@
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex flex-column justify-content-center">
@@ -260,7 +256,7 @@
                         <h4>MSc.IT. (Master of Science in Information Technology)</h4>
                         <h5>2018 - 2020</h5>
                         <p><em>Atmiya University, Rajkot, Gujarat</em></p>
-                        <p>MScIT is a 2 years’ postgraduate degree program which can be opted after any Computer bachelor’s programme from a recognized university. The Study includes Advance Computing Technologies like Mobile Computing, Data Science, Web Technologies, Information Security, and other advanced topics as core learning.</p>
+                        <p>MScIT is a 2 years’ postgraduate degree program which can be opted after any Computer bachelor’s programe from a recognized university. The Study includes Advance Computing Technologies like Mobile Computing, Data Science, Web Technologies, Information Security, and other advanced topics as core learning.</p>
                     </div>
                     <div class="resume-item">
                         <h4>P.G.D.C.A. (Post-Graduation Diploma in Computer Application)</h4>
@@ -349,9 +345,10 @@
                         <div class="portfolio-info">
                             <h4>App 1</h4>
                             <p>Arabic Poetry</p>
+                            <p>A mobile app for exploring and saving Arabic poetry.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/arabic-poetry.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/arabic-poetry" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -363,9 +360,10 @@
                         <div class="portfolio-info">
                             <h4>Web 1</h4>
                             <p>The Dejo</p>
+                            <p>A web platform for martial arts enthusiasts to book training and track progress.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/the-dojo.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/the-dojo" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -377,9 +375,10 @@
                         <div class="portfolio-info">
                             <h4>App 2</h4>
                             <p>Bookie</p>
+                            <p>A bookstore app with secure payments and AI-powered recommendations.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/bookie.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/bookie" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -391,9 +390,10 @@
                         <div class="portfolio-info">
                             <h4>Card 1</h4>
                             <p>Mutah IT</p>
+                            <p>A digital business card generator for professionals.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/mutah-it.webp" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/mutah-it" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -405,9 +405,10 @@
                         <div class="portfolio-info">
                             <h4>Web 2</h4>
                             <p>Astro</p>
+                            <p>A horoscope is used to provide information about the present and to predict events to come.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/astro.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/astro" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -419,9 +420,10 @@
                         <div class="portfolio-info">
                             <h4>App 3</h4>
                             <p>Logi Work</p>
+                            <p>A logistics and fleet management application with live tracking.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/logiwork.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/logi-work" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -432,10 +434,11 @@
                         <img src="~/assets/img/portfolio/voice_converter.png" class="img-fluid" alt="">
                         <div class="portfolio-info">
                             <h4>Card 2</h4>
-                            <p>Voice COnverter</p>
+                            <p>Voice Converter</p>
+                            <p>An app that converts voice recordings into multiple text formats.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/voice_converter.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/voice-converter" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -447,9 +450,10 @@
                         <div class="portfolio-info">
                             <h4>Card 3</h4>
                             <p>Gekko</p>
+                            <p>Gekko is a Bitcoin TA trading and backtesting platform that connects to popular Bitcoin exchanges. It is written in JavaScript and runs on Node.js.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/gekko.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/gekko" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -461,9 +465,10 @@
                         <div class="portfolio-info">
                             <h4>Web 3</h4>
                             <p>Search Engine</p>
+                            <p>A lightweight and efficient web search engine for curated content.</p>
                             <div class="portfolio-links">
                                 <a href="~/assets/img/portfolio/search_engine.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                                <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                                <a href="/portfoliodetails/search-engine" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                             </div>
                         </div>
                     </div>
@@ -493,7 +498,7 @@
                             </svg>
                             <i class="bx bx-code-alt"></i>
                         </div>
-                        <h4><a href="">Web Application Development</a></h4>
+                        <h4><a href="#services">Web Application Development</a></h4>
                         <p>Build dynamic, responsive, and high-performance web applications using ASP.NET Core or ASP.NET MVC. Focus on delivering scalable solutions tailored to client needs.</p>
                     </div>
                 </div>
@@ -506,7 +511,7 @@
                             </svg>
                             <i class="bx bx-desktop"></i>
                         </div>
-                        <h4><a href="">Desktop Application Development</a></h4>
+                        <h4><a href="#services">Desktop Application Development</a></h4>
                         <p>Create robust, user-friendly desktop applications using .NET technologies like MAUI, Windows Presentation Foundation (WPF) or Windows Forms.</p>
                     </div>
                 </div>
@@ -519,7 +524,7 @@
                             </svg>
                             <i class="bx bx-data"></i>
                         </div>
-                        <h4><a href="">Database Design and Development</a></h4>
+                        <h4><a href="#services">Database Design and Development</a></h4>
                         <p>Design, implement, and optimize databases for seamless integration with .NET applications. Ensure data security and high performance.</p>
                     </div>
                 </div>
@@ -532,7 +537,7 @@
                             </svg>
                             <i class="bx bx-git-merge"></i>
                         </div>
-                        <h4><a href="">API Development and Integration</a></h4>
+                        <h4><a href="#services">API Development and Integration</a></h4>
                         <p>Build secure and scalable APIs to facilitate communication between systems or integrate third-party services into existing applications.</p>
                     </div>
                 </div>
@@ -545,7 +550,7 @@
                             </svg>
                             <i class="bx bx-cloud-upload"></i>
                         </div>
-                        <h4><a href="">Cloud-Based Solutions</a></h4>
+                        <h4><a href="#services">Cloud-Based Solutions</a></h4>
                         <p>Leverage cloud platforms like Microsoft Azure to build, deploy, and manage applications with high availability and scalability.</p>
                     </div>
                 </div>
@@ -558,7 +563,7 @@
                             </svg>
                             <i class="bx bx-support"></i>
                         </div>
-                        <h4><a href="">Application Maintenance and Support</a></h4>
+                        <h4><a href="#services">Application Maintenance and Support</a></h4>
                         <p>Provide ongoing maintenance, bug fixing, and performance optimization for existing .NET applications to ensure smooth operations.</p>
                     </div>
                 </div>
@@ -687,13 +692,13 @@
 
                 <div class="col-lg-8 mt-5 mt-lg-0">
 
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form method="post" id="contactForm" role="form" action="/api/ContactForm" class="php-email-form" data-recaptcha-site-key="6Le4vMsqAAAAALabsaFDO2E9-ojl_g6A5Ql1yW09">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email" value="" placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
@@ -707,6 +712,9 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
+
+                        <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
+
                         <div class="text-center"><button type="submit">Send Message</button></div>
                     </form>
 
@@ -716,7 +724,64 @@
 
         </div>
     </section>
+    @* <partial name="_ContactForm" , model="new _ContactForm(null)" /> *@
+
     <!-- End Contact Section -->
 
 </main>
 <!-- End #main -->
+<!-- Load Google reCAPTCHA script -->
+<!-- Load Google reCAPTCHA v3 -->
+<!-- Load reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js?render=6Le4vMsqAAAAALabsaFDO2E9-ojl_g6A5Ql1yW09"></script>
+
+@* <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Stop default submission
+
+            grecaptcha.ready(function () {
+                grecaptcha.execute("6Le4vMsqAAAAALabsaFDO2E9-ojl_g6A5Ql1yW09", { action: "CONTACT_FORM_SUBMIT" })
+                    .then(function (token) {
+                        document.getElementById("recaptchaResponse").value = token; // Set token
+                        form.submit(); // Now submit the form
+                    })
+                    .catch(function (error) {
+                        console.error("reCAPTCHA error:", error);
+                        alert("reCAPTCHA failed. Please try again.");
+                    });
+            });
+        });
+    });
+</script> *@
+
+@* <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $("#contactForm").on('submit', function (evt) {
+            evt.preventDefault(); // Prevent default form submission
+            debugger
+            $.ajax({
+                url: '/api/ContactForm', // Controller action URL
+                type: 'POST',
+                data: $(this).serialize(), // Serialize form data
+                success: function (response) {
+                    if (response.success) {
+                        $(".sent-message").show();
+                        $(".error-message").hide();
+                        $("#contactForm")[0].reset(); // Reset the form
+                    } else {
+                        $(".error-message").text(response.errorMessage).show();
+                        $(".sent-message").hide();
+                    }
+                },
+                error: function () {
+                    $(".error-message").text("There was an error sending your message. Please try again.").show();
+                    $(".sent-message").hide();
+                }
+            });
+        });
+    });
+</script> *@
