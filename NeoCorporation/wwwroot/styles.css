@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+    font-family: 'OCR A', 'Share Tech Mono', monospace;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: #00ff00;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Matrix Code Effect */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Centered Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #0F0, 0 0 20px #0F0;
+}
+
+.tagline {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.coming-soon {
+    font-size: 40px;
+    color: #0F0;
+    text-shadow: 0 0 5px #0F0, 0 0 15px #0F0;
+}
+
+.info {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Follow the Rabbit */
+.rabbit {
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	width: 40px;
+	cursor: pointer;
+	opacity: 0.7;
+	transition: all 0.3s;
+	animation: float 3s infinite ease-in-out;
+}
+
+.rabbit:hover {
+	opacity: 1;
+	transform: scale(1.2);
+}
+
+.cursor {
+    display: inline-block;
+    font-size: 40px;
+    color: #0F0;
+    text-shadow: 0 0 5px #0F0, 0 0 15px #0F0;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
