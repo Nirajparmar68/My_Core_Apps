@@ -35,7 +35,9 @@ window.onload = () => {
     matrixEffect();
 
     // White Rabbit Easter Egg
-    document.getElementById("rabbitLink").addEventListener("click", () => {
+    document.getElementById("rabbitLink").addEventListener("click", (event) => {
+        event.preventDefault(); // Prevents the # from appearing in the URL
+        console.log("Rabbit clicked!"); // Add your desired action here
         alert("Wake up, Neo... The Matrix has you.");
     });
 };
