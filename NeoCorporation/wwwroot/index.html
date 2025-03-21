@@ -9,19 +9,27 @@
 <body>
 
     <!-- Matrix Code Effect -->
-    <canvas id="matrixCanvas"></canvas>
+    <!--<canvas id="matrixCanvas"></canvas>-->
+    <canvas id="particlesCanvas"></canvas>
 
     <!-- Main Content -->
     <div class="content">
         <h1>Neo Corporation</h1>
         <p class="tagline">The Future is Now</p>
-        <h2 class="coming-soon"><span id="typed-text"></span><span class="cursor">|</span></h2>
+
+        <!-- Typing Effect -->
+        <h2 class="coming-soon">
+            <span id="typed-text"></span>
+            <span class="cursorText">|</span>
+        </h2>
+
         <p class="info">We are launching soon. Stay tuned for something amazing.</p>
 
         <!-- Follow the Rabbit Link -->
         <p class="tagline">
-            Follow the White Rabbit..
-			<a href="#" id="rabbitLink">
+            <span id="rabbitText" style="visibility: hidden;"></span>
+            <span class="cursorLink">|</span>
+            <a href="#" id="rabbitLink" style="visibility: hidden;">
                 🐇
             </a>
         </p>

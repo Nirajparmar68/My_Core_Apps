@@ -1,44 +1,59 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+﻿/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap');
 
-body {
-    font-family: 'OCR A', 'Share Tech Mono', monospace;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    background: black;
-    color: #00ff00;
-    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    background: black;
+    color: #00ffcc;
+    font-family: 'Share Tech Mono', 'Orbitron', monospace;
     overflow: hidden;
+    background: url('background.png') no-repeat center center fixed; /* 🔥 Set Background Image */
+    background-size: cover; /* Cover the whole screen */
+    z-index: -2;
 }
 
-/* Matrix Code Effect */
+/* Particle Background */
+#particlesCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* Matrix Background Effect */
 #matrixCanvas {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
-/* Centered Content */
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
-}
+/* Style the Main Content */
+/*.content {
+    position: relative;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #0F0;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+}*/
 
-h1 {
+/* Headings */
+/*h1 {
     font-size: 50px;
     letter-spacing: 3px;
     text-shadow: 0 0 10px #0F0, 0 0 20px #0F0;
@@ -53,43 +68,109 @@ h1 {
     font-size: 40px;
     color: #0F0;
     text-shadow: 0 0 5px #0F0, 0 0 15px #0F0;
+}*/
+
+/* Style the Main Content */
+.content {
+    position: relative;
+    z-index: 0;
+    background: rgba(0, 0, 0, 0.5); /* Slight transparency */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6), /* Soft Cyan Glow */
+    0 0 25px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+    backdrop-filter: brightness(0.5); /* Smooth glassmorphism effect */
+    border: 1px solid rgba(0, 255, 255, 0.3); /* Soft cyan border */
 }
 
+/* Headings */
+h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    color: #00cccc; /* Slightly darker cyan */
+    text-shadow: 0 0 5px #008888, 0 0 10px rgba(0, 255, 255, 0.5); /* Softer glow */
+}
+
+/* "Launching Soon" Text */
+.coming-soon {
+    font-size: 40px;
+    color: #00b3b3; /* More contrast */
+    text-shadow: 0 0 5px #007777, 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+/* Tagline */
+.tagline {
+    font-size: 22px;
+    color: #00aaaa; /* Balanced contrast */
+    text-shadow: 0 0 3px #006666, 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* Additional Info */
 .info {
     font-size: 18px;
-    margin-top: 10px;
-    opacity: 0.8;
+    color: #00ffee; /* Lighter cyan for better contrast */
+    text-shadow: 0 0 3px #008888, 0 0 10px rgba(0, 255, 255, 0.5);
+    font-weight: bold; /* Increases visibility */
 }
+
+/* Cursor & Rabbit Text */
+.cursorText, .cursorLink {
+    font-size: 40px;
+    color: #00cccc;
+    text-shadow: 0 0 5px #007777, 0 0 12px rgba(0, 255, 255, 0.5);
+}
+
+
 
 /* Follow the Rabbit */
 .rabbit {
-	position: absolute;
-	bottom: 50px;
-	right: 50px;
-	width: 40px;
-	cursor: pointer;
-	opacity: 0.7;
-	transition: all 0.3s;
-	animation: float 3s infinite ease-in-out;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 40px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s;
+    animation: float 3s infinite ease-in-out;
 }
 
-.rabbit:hover {
-	opacity: 1;
-	transform: scale(1.2);
-}
+    .rabbit:hover {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 
-.cursor {
+/* Cursor & Rabbit Text */
+/*.cursorText, .cursorLink {
+    font-size: 40px;
+    color: #00bbbb;
+    text-shadow: 0 0 8px rgba(0, 180, 180, 0.9);
+}*/
+/*.cursorText, .cursorLink {
     display: inline-block;
     font-size: 40px;
-    color: #0F0;
-    text-shadow: 0 0 5px #0F0, 0 0 15px #0F0;
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff;
     animation: blink 0.8s infinite;
-}
+}*/
 
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
+.tagline:last-of-type {
+    visibility: hidden; /* Hide the Rabbit text initially */
+}
 
+#rabbitText {
+    visibility: hidden; /* Hide initially */
+}
